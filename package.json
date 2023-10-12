@@ -1,0 +1,26 @@
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobassherkhandakar/prisma-projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mobassherkhandakar/prisma-projects/issues"
+  },
+  "homepage": "https://github.com/mobassherkhandakar/prisma-projects#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "prisma": "^5.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
