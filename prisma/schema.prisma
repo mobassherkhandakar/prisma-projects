@@ -11,24 +11,31 @@ datasource db {
 }
 
 model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  role    String
+  porfile Profile?
+  post Post[]
+}
+
+model Profile {
+  id     Int    @id @default(autoincrement())
+  bio    String
+  userId Int    @unique
+  user User @relation(fields: [userId], references: [id])
+}
+model Catagory {
   id Int @id @default(autoincrement())
-  email String @unique
   name String
   post Post[]
-  profile Profile?
 }
 model Post {
   id Int @id @default(autoincrement())
   title String
-  content String
-  published Boolean @default(false)
   authorId Int
+  catagoryId Int
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  catagory Catagory @relation(fields: [catagoryId], references: [id])
   author User @relation(fields: [authorId], references: [id])
-}
-
-model Profile {
-  id Int @id @default(autoincrement())
-  bio String
-  userId Int @unique
-  user User @relation(fields: [userId], references: [id])
 }
