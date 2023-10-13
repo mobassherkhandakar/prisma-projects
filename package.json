@@ -18,12 +18,16 @@
   },
   "homepage": "https://github.com/mobassherkhandakar/prisma-projects#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.19",
     "@types/node": "^20.8.4",
     "prisma": "^5.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@prisma/client": "^5.4.2"
+    "@prisma/client": "^5.4.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   }
 }
