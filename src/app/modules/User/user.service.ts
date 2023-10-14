@@ -25,20 +25,30 @@ const insertOrUpdateProfile = async (data: Profile) => {
     return result;
   }
   const result = await prisma.profile.create({
-    data
+    data,
   });
   return result;
 };
-const getAllUser = async()=>{
+const getAllUser = async () => {
   const result = await prisma.user.findMany({
     include: {
-      porfile: true
-    }
-  })
-  return result
-}
+      porfile: true,
+    },
+  });
+  return result;
+};
+
+const getSingleUser = async (id: number) => {
+  const result = await prisma.user.findUnique({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
 export const userService = {
   insertIntoDB,
   insertOrUpdateProfile,
-  getAllUser
+  getAllUser,
+  getSingleUser,
 };
