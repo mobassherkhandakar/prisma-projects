@@ -23,9 +23,18 @@ const insertOrUpdateProfile =async (req:Request,res:Response) => {
     data: result
   })
 }
+const getAllUser = async(req:Request,res:Response)=>{
+  const result = await userService.getAllUser()
+  res.send({
+    success: true,
+    message: "Get All User Successful",
+    data: result
+  })
+}
 
 
 export const userController = {
   insertIntoDB,
-  insertOrUpdateProfile
+  insertOrUpdateProfile,
+  getAllUser
 }
